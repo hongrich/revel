@@ -10,7 +10,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/robfig/revel"
+	"github.com/hongrich/revel"
 )
 
 // Use a wrapper to differentiate logged panics from unexpected ones.

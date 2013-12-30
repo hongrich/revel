@@ -2,8 +2,8 @@ package jobs
 
 import (
 	"fmt"
+	"github.com/hongrich/revel"
 	"github.com/robfig/cron"
-	"github.com/robfig/revel"
 )
 
 const DEFAULT_JOB_POOL_SIZE = 10

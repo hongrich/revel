@@ -15,7 +15,7 @@ import (
 	"strings"
 
 	"github.com/golang/glog"
-	"github.com/robfig/revel"
+	"github.com/hongrich/revel"
 )
 
 // SourceInfo is the top-level struct containing all extracted information

@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/golang/glog"
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/harness"
+	"github.com/hongrich/revel"
+	"github.com/hongrich/revel/harness"
 )
 
 var cmdBuild = &Command{

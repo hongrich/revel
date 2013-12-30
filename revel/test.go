@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/harness"
-	"github.com/robfig/revel/modules/testrunner/app/controllers"
+	"github.com/hongrich/revel"
+	"github.com/hongrich/revel/harness"
+	"github.com/hongrich/revel/modules/testrunner/app/controllers"
 )
 
 var cmdTest = &Command{
@@ -71,7 +71,7 @@ func testApp(args []string) {
 	// Ensure that the testrunner is loaded in this mode.
 	testRunnerFound := false
 	for _, module := range revel.Modules {
-		if module.ImportPath == "github.com/robfig/revel/modules/testrunner" {
+		if module.ImportPath == "github.com/hongrich/revel/modules/testrunner" {
 			testRunnerFound = true
 			break
 		}

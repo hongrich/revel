@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 
 	"github.com/golang/glog"
+	"github.com/hongrich/revel"
 	"github.com/robfig/cron"
-	"github.com/robfig/revel"
 )
 
 type Job struct {
