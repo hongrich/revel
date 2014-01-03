@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 )
 
 type Result interface {

@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 	"github.com/robfig/go-cache"
 )
 

@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 	"github.com/robfig/goauth2/oauth"
 	"github.com/robfig/revel"
 	"github.com/robfig/revel/samples/facebook-oauth2/app/models"

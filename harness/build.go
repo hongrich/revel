@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"text/template"
 
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 	"github.com/hongrich/revel"
 )
 
@@ -254,7 +254,7 @@ package main
 import (
 	"flag"
 	"reflect"
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 	"github.com/hongrich/revel"{{range $k, $v := $.ImportPaths}}
 	{{$v}} "{{$k}}"{{end}}
 )

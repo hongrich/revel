@@ -14,7 +14,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 	"github.com/hongrich/revel"
 )
 

@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/golang/glog"
+	"github.com/hongrich/glog"
 	"github.com/hongrich/revel"
 	"github.com/hongrich/revel/harness"
 	"github.com/hongrich/revel/modules/testrunner/app/controllers"
