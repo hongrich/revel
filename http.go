@@ -92,13 +92,13 @@ func ResolveFormat(req *http.Request) string {
 func FormatToContentType(format string) string {
 	switch format {
 	case "html":
-		return "text/html"
+		return "text/html; charset=utf-8"
 	case "txt":
-		return "text/plain"
+		return "text/plain; charset=utf-8"
 	case "xml":
-		return "text/xml"
+		return "text/xml; charset=utf-8"
 	case "json":
-		return "application/json"
+		return "application/json; charset=utf-8"
 	}
 	panic("unrecognized format: " + format)
 }
