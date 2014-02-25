@@ -39,6 +39,8 @@ func handleInternal(w http.ResponseWriter, r *http.Request, ws *websocket.Conn) 
 	Filters[0](c, Filters[1:])
 	if c.Result != nil {
 		c.Result.Apply(req, resp)
+	} else if c.Response.Status != 0 {
+		c.Response.Out.WriteHeader(c.Response.Status)
 	}
 }
 
