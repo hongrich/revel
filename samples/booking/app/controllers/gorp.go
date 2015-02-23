@@ -4,12 +4,12 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/coopernurse/gorp"
 	"github.com/hongrich/glog"
 	r "github.com/robfig/revel"
 	db "github.com/robfig/revel/modules/db/app"
 	"github.com/robfig/revel/samples/booking/app/models"
 	"golang.org/x/crypto/bcrypt"
+	"gopkg.in/gorp.v1"
 )
 
 var (
