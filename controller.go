@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"code.google.com/p/go.net/websocket"
 	"github.com/hongrich/glog"
+	"golang.org/x/net/websocket"
 )
 
 type Controller struct {

@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"code.google.com/p/go.net/websocket"
 	"github.com/hongrich/glog"
+	"golang.org/x/net/websocket"
 )
 
 var (

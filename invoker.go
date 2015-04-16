@@ -3,8 +3,8 @@ package revel
 import (
 	"reflect"
 
-	"code.google.com/p/go.net/websocket"
 	"github.com/hongrich/glog"
+	"golang.org/x/net/websocket"
 )
 
 var (
