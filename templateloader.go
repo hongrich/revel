@@ -81,7 +81,7 @@ func (loader *TemplateLoader) Refresh() *Error {
 
 			// Walk into directories.
 			if info.IsDir() {
-				if !loader.WatchDir(info) {
+				if !loader.WatchDir(info.Name()) {
 					return filepath.SkipDir
 				}
 				return nil
@@ -170,9 +170,9 @@ func (loader *TemplateLoader) SourceLines(templateName string) []string {
 	return strings.Split(string(fileBytes), "\n")
 }
 
-func (loader *TemplateLoader) WatchDir(info os.FileInfo) bool {
+func (loader *TemplateLoader) WatchDir(basename string) bool {
 	// Watch all directories, except the ones starting with a dot.
-	return !strings.HasPrefix(info.Name(), ".")
+	return !strings.HasPrefix(basename, ".")
 }
 
 func (loader *TemplateLoader) WatchFile(basename string) bool {

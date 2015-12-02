@@ -140,8 +140,8 @@ func (h *Harness) Refresh() (err *revel.Error) {
 	return
 }
 
-func (h *Harness) WatchDir(info os.FileInfo) bool {
-	return !revel.ContainsString(doNotWatch, info.Name())
+func (h *Harness) WatchDir(basename string) bool {
+	return !revel.ContainsString(doNotWatch, basename)
 }
 
 func (h *Harness) WatchFile(filename string) bool {
