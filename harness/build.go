@@ -11,6 +11,7 @@ import (
 	"runtime"
 	"strconv"
 	"text/template"
+	"time"
 
 	"github.com/hongrich/glog"
 	"github.com/hongrich/revel"
@@ -24,6 +25,8 @@ var importErrorPattern = regexp.MustCompile("cannot find package \"([^\"]+)\"")
 // Requires that revel.Init has been called previously.
 // Returns the path to the built binary, and an error if there was a problem building it.
 func Build() (app *App, compileError *revel.Error) {
+	start := time.Now()
+
 	// First, clear the generated files (to avoid them messing with ProcessSource).
 	cleanSource("tmp", "routes")
 
@@ -69,6 +72,7 @@ func Build() (app *App, compileError *revel.Error) {
 	gotten := make(map[string]struct{})
 	for {
 		buildCmd := exec.Command(goPath, "build",
+			"-i",
 			"-tags", buildTags,
 			"-o", binName, path.Join(revel.ImportPath, "app", "tmp"))
 		glog.V(1).Infoln("Exec:", buildCmd.Args)
@@ -76,6 +80,7 @@ func Build() (app *App, compileError *revel.Error) {
 
 		// If the build succeeded, we're done.
 		if err == nil {
+			glog.Infof("Build took %s", time.Since(start))
 			return NewApp(binName), nil
 		}
 		glog.Error(string(output))
