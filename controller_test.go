@@ -16,9 +16,9 @@ func TestAcceptsHeader(t *testing.T) {
 		accepts, prefix string
 		status          int
 	}{
-		{"text/html", "<!DOCTYPE html>", 200},
-		{"application/json", `{"HotelId":3`, 200},
-		{"application/xml", "<Hotel><HotelId>3</HotelId>", 200},
+		{"text/html; charset=utf-8", "<!DOCTYPE html>", 200},
+		{"application/json; charset=utf-8", `{"HotelId":3`, 200},
+		{"application/xml; charset=utf-8", "<Hotel><HotelId>3</HotelId>", 200},
 		{"text/plain; charset=utf-8", "Not Found", 404},
 	}
 
