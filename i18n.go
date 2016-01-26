@@ -44,10 +44,22 @@ func Message(locale, message string, args ...interface{}) string {
 	language, region := parseLocale(locale)
 	glog.V(1).Infof("Resolving message '%s' for language '%s' and region '%s'", message, language, region)
 
+	var value string
+	var err error
 	messageConfig, knownLanguage := messages[language]
-	if !knownLanguage {
-		glog.Warningf("Unsupported language for locale '%s' and message '%s', trying default language", locale, message)
+	if knownLanguage {
+		// This works because unlike the goconfig documentation suggests it will actually
+		// try to resolve message in DEFAULT if it did not find it in the given section.
+		value, err = messageConfig.String(region, message)
+		if err != nil {
+			glog.V(1).Infof("Unknown message '%s' for locale '%s', trying default language", message, locale)
+			// Continue to try default language
+		}
+	} else {
+		glog.V(1).Infof("Unsupported language for locale '%s' and message '%s', trying default language", locale, message)
+	}
 
+	if value == "" {
 		if defaultLanguage, found := Config.String(defaultLanguageOption); found {
 			glog.V(1).Infof("Using default language '%s'", defaultLanguage)
 
@@ -56,18 +68,16 @@ func Message(locale, message string, args ...interface{}) string {
 				glog.Warningf("Unsupported default language for locale '%s' and message '%s'", defaultLanguage, message)
 				return fmt.Sprintf(unknownValueFormat, message)
 			}
+
+			value, err = messageConfig.String(region, message)
+			if err != nil {
+				glog.Warningf("Unknown message '%s' for default locale '%s'", message, locale)
+				return fmt.Sprintf(unknownValueFormat, message)
+			}
 		} else {
 			glog.Warningf("Unable to find default language option (%s); messages for unsupported locales will never be translated", defaultLanguageOption)
 			return fmt.Sprintf(unknownValueFormat, message)
 		}
-	}
-
-	// This works because unlike the goconfig documentation suggests it will actually
-	// try to resolve message in DEFAULT if it did not find it in the given section.
-	value, error := messageConfig.String(region, message)
-	if error != nil {
-		glog.Warningf("Unknown message '%s' for locale '%s'", message, locale)
-		return fmt.Sprintf(unknownValueFormat, message)
 	}
 
 	if len(args) > 0 {
