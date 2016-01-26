@@ -64,6 +64,10 @@ func TestI18nMessage(t *testing.T) {
 	if message := Message("nl", "unknown message"); message != "??? unknown message ???" {
 		t.Error("Message 'unknown message' is not supposed to exist")
 	}
+	// Assert that we fallback to a default string when it doesn't exist in a language
+	if message := Message("nl", "folded"); message != "Greeting is 'Hello'" {
+		t.Errorf("Message 'folded' for locale 'nl' (%s) does not fall back to default en value", message)
+	}
 }
 
 func TestI18nMessageWithDefaultLocale(t *testing.T) {
