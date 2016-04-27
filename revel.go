@@ -56,6 +56,10 @@ var (
 	CookiePrefix string // All cookies dropped by the framework begin with this prefix.
 	LogToStderr  bool   // If true, hard code logging configuration to logtostderr
 
+	// Cookie flags
+	CookieHttpOnly bool
+	CookieSecure   bool
+
 	Initialized bool
 
 	// Private
@@ -138,6 +142,8 @@ func Init(mode, importPath, srcPath string) {
 
 	AppName = Config.StringDefault("app.name", "(not set)")
 	CookiePrefix = Config.StringDefault("cookie.prefix", "REVEL")
+	CookieHttpOnly = Config.BoolDefault("cookie.httponly", false)
+	CookieSecure = Config.BoolDefault("cookie.secure", false)
 	if secretStr := Config.StringDefault("app.secret", ""); secretStr != "" {
 		secretKey = []byte(secretStr)
 	}

@@ -71,10 +71,12 @@ func (s Session) cookie() *http.Cookie {
 
 	sessionData := url.QueryEscape(sessionValue)
 	return &http.Cookie{
-		Name:    CookiePrefix + "_SESSION",
-		Value:   Sign(sessionData) + "-" + sessionData,
-		Path:    "/",
-		Expires: ts.UTC(),
+		Name:     CookiePrefix + "_SESSION",
+		Value:    Sign(sessionData) + "-" + sessionData,
+		Path:     "/",
+		HttpOnly: CookieHttpOnly,
+		Secure:   CookieSecure,
+		Expires:  ts.UTC(),
 	}
 }
 

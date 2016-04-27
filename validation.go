@@ -190,9 +190,11 @@ func ValidationFilter(c *Controller, fc []Filter) {
 		}
 	}
 	c.SetCookie(&http.Cookie{
-		Name:  CookiePrefix + "_ERRORS",
-		Value: url.QueryEscape(errorsValue),
-		Path:  "/",
+		Name:     CookiePrefix + "_ERRORS",
+		Value:    url.QueryEscape(errorsValue),
+		Path:     "/",
+		HttpOnly: CookieHttpOnly,
+		Secure:   CookieSecure,
 	})
 }
 
