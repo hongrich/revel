@@ -29,6 +29,5 @@ script:
   # Build & run the sample apps
   - revel test github.com/hongrich/revel/samples/booking
   - revel test github.com/hongrich/revel/samples/chat
-  - revel test github.com/hongrich/revel/samples/twitter-oauth
   - revel test github.com/hongrich/revel/samples/validation
   - revel test github.com/hongrich/revel/samples/chat
