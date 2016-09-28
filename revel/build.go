@@ -22,7 +22,7 @@ WARNING: The target path will be completely deleted, if it already exists!
 
 For example:
 
-    revel build github.com/robfig/revel/samples/chat /tmp/chat
+    revel build github.com/hongrich/revel/samples/chat /tmp/chat
 `,
 }
 

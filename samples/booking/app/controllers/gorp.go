@@ -5,9 +5,9 @@ import (
 	"log"
 
 	"github.com/hongrich/glog"
-	r "github.com/robfig/revel"
-	db "github.com/robfig/revel/modules/db/app"
-	"github.com/robfig/revel/samples/booking/app/models"
+	r "github.com/hongrich/revel"
+	db "github.com/hongrich/revel/modules/db/app"
+	"github.com/hongrich/revel/samples/booking/app/models"
 	"golang.org/x/crypto/bcrypt"
 	"gopkg.in/gorp.v1"
 )

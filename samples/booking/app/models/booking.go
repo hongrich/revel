@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/robfig/revel"
+	"github.com/hongrich/revel"
 	"gopkg.in/gorp.v1"
 )
 

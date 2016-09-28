@@ -23,7 +23,7 @@ For package, run mode defaults to "prod".
 
 For example:
 
-    revel package github.com/robfig/revel/samples/chat
+    revel package github.com/hongrich/revel/samples/chat
 `,
 }
 

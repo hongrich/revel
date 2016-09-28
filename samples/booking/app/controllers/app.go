@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/samples/booking/app/models"
-	"github.com/robfig/revel/samples/booking/app/routes"
+	"github.com/hongrich/revel"
+	"github.com/hongrich/revel/samples/booking/app/models"
+	"github.com/hongrich/revel/samples/booking/app/routes"
 	"golang.org/x/crypto/bcrypt"
 )
 

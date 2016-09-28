@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/samples/chat/app/chatroom"
+	"github.com/hongrich/revel"
+	"github.com/hongrich/revel/samples/chat/app/chatroom"
 	"golang.org/x/net/websocket"
 )
 

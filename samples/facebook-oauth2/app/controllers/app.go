@@ -9,8 +9,8 @@ import (
 
 	"github.com/hongrich/glog"
 	"github.com/robfig/goauth2/oauth"
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/samples/facebook-oauth2/app/models"
+	"github.com/hongrich/revel"
+	"github.com/hongrich/revel/samples/facebook-oauth2/app/models"
 )
 
 type Application struct {

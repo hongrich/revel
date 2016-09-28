@@ -6,8 +6,8 @@ import (
 
 	"github.com/hongrich/glog"
 	"github.com/mrjones/oauth"
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/samples/twitter-oauth/app/models"
+	"github.com/hongrich/revel"
+	"github.com/hongrich/revel/samples/twitter-oauth/app/models"
 )
 
 var TWITTER = oauth.NewConsumer(

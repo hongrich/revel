@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/robfig/revel"
+	"github.com/hongrich/revel"
 )
 
 type Sample2 struct {

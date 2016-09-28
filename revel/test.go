@@ -25,7 +25,7 @@ Run all tests for the Revel app named by the given import path.
 
 For example, to run the booking sample application's tests:
 
-    revel test github.com/robfig/revel/samples/booking dev
+    revel test github.com/hongrich/revel/samples/booking dev
 
 The run mode is used to select which set of app.conf configuration should
 apply and may be used to determine logic in the application itself.
@@ -81,7 +81,7 @@ func testApp(args []string) {
 
 You can add it to a run mode configuration with the following line:
 
-	module.testrunner = github.com/robfig/revel/modules/testrunner
+	module.testrunner = github.com/hongrich/revel/modules/testrunner
 
 `)
 	}
